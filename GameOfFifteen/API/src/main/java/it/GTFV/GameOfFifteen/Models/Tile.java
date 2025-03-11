@@ -79,4 +79,16 @@ public class Tile {
                 ", Valid="+ this.isCorrect()+
                 '}';
     }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }
