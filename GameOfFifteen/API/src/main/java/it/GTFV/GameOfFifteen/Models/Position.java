@@ -46,8 +46,10 @@ public record Position(int row, int column, int size) {
      *
      * @param direction
      * @return the position of a cell given their SlidingDirection (UP, DOWN, LEFT, RIGHT)
+     * @throws IllegalArgumentException if direction is null
      */
     public Position next(SlidingDirection direction){
+        if(direction == null) throw new IllegalArgumentException("Direction can't be null!");
         switch (direction){
             case UP: if(this.row < this.size-1) return new Position(row+1,column,size);
             case DOWN: if(this.row > 0) return new Position(row-1,column,size);
@@ -83,7 +85,7 @@ public record Position(int row, int column, int size) {
      * @throws IllegalArgumentException if the target position is null
      */
     public SlidingDirection getDirection(Position to) {
-        if(to == null) throw new IllegalArgumentException("Position can not be null!");
+        if(to == null) throw new IllegalArgumentException("Position can't be null!");
         if (this.row() == to.row()) {
             if (this.column() < to.column()) {
                 return SlidingDirection.LEFT;
@@ -110,7 +112,7 @@ public record Position(int row, int column, int size) {
      * @throws IllegalArgumentException if the specified position is null
      */
     public boolean isAdjacent(Position pos2) {
-        if(pos2 == null) throw new IllegalArgumentException("Specified position can not be null!");
+        if(pos2 == null) throw new IllegalArgumentException("Position can't be null!");
         return (Math.abs(this.row() - pos2.row()) == 1 && this.column() == pos2.column()) ||
                 (Math.abs(this.column() - pos2.column()) == 1 && this.row() == pos2.row());
     }
