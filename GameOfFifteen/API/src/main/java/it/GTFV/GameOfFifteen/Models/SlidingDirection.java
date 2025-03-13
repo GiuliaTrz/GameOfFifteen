@@ -40,6 +40,7 @@ public enum SlidingDirection {
      *
      * @param direction is a char that represents the direction
      * @return the direction specified by the input character
+     * @throws IllegalArgumentException if direction is not one of the allowed characters
      */
     public static SlidingDirection fromChar(char direction) {
         direction = Character.toUpperCase(direction);
