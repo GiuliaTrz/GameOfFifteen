@@ -199,4 +199,12 @@ public class GameBoard {
      * @return the empty position
      */
     public Position getEmptyPosition(){return this.emptyPosition;}
+
+    /**
+     * Returns the size of the grid
+     * @return gridSize
+     */
+    public int getGridSize () {
+        return this.gridSize;
+    }
 }

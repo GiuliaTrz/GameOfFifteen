@@ -22,11 +22,56 @@
 
 package it.GTFV.GameOfFifteen.CLIApp;
 
-import it.GTFV.GameOfFifteen.DemoAPI;
+import it.GTFV.GameOfFifteen.Game.GameBoard;
+import it.GTFV.GameOfFifteen.Models.Tile;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello World");
-        DemoAPI.test();
+    private static GameBoard gameboard;
+    public static void main(String[] args) throws IOException {
+       int shuffleLevel = Integer.parseInt(readString("Enter shuffle level: "));
+       gameboard = new GameBoard(shuffleLevel);
+        System.out.println(printBoard());
+    }
+
+    /**
+     * This method reads a string
+     * @param message the prompt
+     * @return the input value
+     * @throws IOException in case of input errors
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private static String readString(String message) throws IOException {
+        BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print(message);
+        return keyboard.readLine();
+    }
+
+    /**
+     *  The method printBoard returns a string (result) that represents the game board
+     * @return a string (result) that represents the game board
+     *  @author Giulia Trozzi
+     *  @author Francesco Valentini
+     */
+    private static String printBoard() {
+        String result = "";
+        Tile tile;
+        Tile[][] tiles = gameboard.getBoard();
+        for (int i = 0; i < gameboard.getGridSize(); i++) {
+            for (int j = 0; j < gameboard.getGridSize(); j++) {
+                tile = tiles[i][j];
+                if (tile.getValue() == 0) {
+                    result += "   ";
+                } else {
+                    result += String.format("%02d ", tile.getValue());
+                }
+            }
+            result += "\n";
+        }
+        return result;
     }
 }

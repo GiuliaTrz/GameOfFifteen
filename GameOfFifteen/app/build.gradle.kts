@@ -15,3 +15,7 @@ application {
     // Define the main class for the application.
     mainClass = "it.GTFV.GameOfFifteen.CLIApp.App"
 }
+
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
