@@ -22,36 +22,18 @@
 
 package it.GTFV.GameOfFifteen.GUIApp;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.fxml.FXML;
 
 /**
- * This class starts the GUI App
+ *
+ * This class is the controller for the GameView scene
  *
  * @author Giulia Trozzi
  * @author Francesco Valentini
  */
-public class GUIMain extends Application {
-    @Override
-    public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("GameView.fxml"));
-        BorderPane root = loader.load();
+public class GameViewContorller {
+    @FXML
+    public void initialize() {
 
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        primaryStage.setTitle("Fifteen Puzzle");
-        primaryStage.setScene(scene);
-
-
-        primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
