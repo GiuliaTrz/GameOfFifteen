@@ -13,3 +13,4 @@ plugins {
 rootProject.name = "GameOfFifteen"
 include("app")
 include("API")
+include("GUIApp")
