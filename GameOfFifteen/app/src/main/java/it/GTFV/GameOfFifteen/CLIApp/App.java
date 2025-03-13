@@ -23,6 +23,7 @@
 package it.GTFV.GameOfFifteen.CLIApp;
 
 import it.GTFV.GameOfFifteen.Game.GameBoard;
+import it.GTFV.GameOfFifteen.Models.SlidingDirection;
 import it.GTFV.GameOfFifteen.Models.Tile;
 
 import java.io.BufferedReader;
@@ -32,9 +33,34 @@ import java.io.InputStreamReader;
 public class App {
     private static GameBoard gameboard;
     public static void main(String[] args) throws IOException {
-       int shuffleLevel = Integer.parseInt(readString("Enter shuffle level: "));
-       gameboard = new GameBoard(shuffleLevel);
+        int shuffleLevel = Integer.parseInt(readString("Enter shuffle level: "));
+        gameboard = new GameBoard(shuffleLevel);
+        gameHandler();
+        System.out.println("Puzzle Solved!");
+    }
+
+    /**
+     *
+     * This method handles the gameplay
+     *
+     * @throws IOException in case of input errors
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private static void gameHandler() throws IOException {
         System.out.println(printBoard());
+        while(!gameboard.isSolved()){
+            System.out.println("U = UP, D = DOWN, L = LEFT, R = RIGHT");
+            String moveStr = readString("Enter a move: ");
+
+            try{
+                SlidingDirection move = SlidingDirection.fromChar(moveStr.charAt(0));
+                gameboard.move(move);
+                System.out.println(printBoard());
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     /**
