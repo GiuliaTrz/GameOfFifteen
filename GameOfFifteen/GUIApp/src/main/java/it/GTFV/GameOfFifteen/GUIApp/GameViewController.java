@@ -23,6 +23,8 @@
 package it.GTFV.GameOfFifteen.GUIApp;
 
 import it.GTFV.GameOfFifteen.Game.GameBoard;
+import it.GTFV.GameOfFifteen.Models.Position;
+import it.GTFV.GameOfFifteen.Models.SlidingDirection;
 import it.GTFV.GameOfFifteen.Models.Tile;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -116,7 +118,7 @@ public class GameViewController {
 
         if (t.getValue() == 0) {
             tileButton.getStyleClass().add("empty-tile");
-            tileButton.setOnAction(this::handleEmptyTileButtonClick);
+
         } else {
             tileButton.getStyleClass().add("tile");
             tileButton.setOnAction(this::handleTileButtonClick);
@@ -127,18 +129,6 @@ public class GameViewController {
     }
 
     /**
-     * This method is executed when a tile containing a number
-     *
-     * that is not zero is clicked
-     * @param actionEvent
-     * @author Giulia Trozzi
-     * @author Francesco Valentini
-     */
-    private void handleEmptyTileButtonClick(ActionEvent actionEvent) {
-
-    }
-
-    /**
      * This method is executed when the empty tile is clicked
      *
      * @param actionEvent
@@ -146,7 +136,18 @@ public class GameViewController {
      * @author Francesco Valentini
      */
     private void handleTileButtonClick(ActionEvent actionEvent) {
+        Button clickedButton = (Button) actionEvent.getSource(); //identifies the clicked button
+        int tileValue = Integer.parseInt(clickedButton.getText());//tileValue is what I read, the text of the button
 
+        Position clickedPosition = grid.get(tileValue).getPosition();//gets the position of the clicked tile
+        Position emptyPosition = grid.getEmptyPosition();//gets the position of the empty tile
+
+        if(clickedPosition.isAdjacent(emptyPosition)){
+            SlidingDirection direction = clickedPosition.getDirection(emptyPosition);//determines the wanted direction of the empty tile
+            if (direction != null && grid.move(direction)){
+                updateBoard();
+            }
+        }
     }
 }
 
