@@ -31,7 +31,7 @@ import javafx.fxml.FXML;
  * @author Giulia Trozzi
  * @author Francesco Valentini
  */
-public class GameViewContorller {
+public class GameViewController {
     @FXML
     public void initialize() {
 
