@@ -22,20 +22,10 @@
   ~ SOFTWARE.
   -->
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<BorderPane
-        prefHeight="600"
-        prefWidth="500"
-        xmlns="http://javafx.com/javafx/17.0.12"
-        xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="it.GTFV.GameOfFifteen.GUIApp.GameViewController">
+<BorderPane prefHeight="600" prefWidth="500" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.GTFV.GameOfFifteen.GUIApp.GameViewController">
 
     <!--
         This is the game grid where all the tiles are shown
@@ -53,7 +43,7 @@
 
             <HBox alignment="CENTER" spacing="10">
                 <TextField id="controls" fx:id="shuffleMovesField" promptText="Enter shuffle moves" />
-                <Button id="controls"  text="Reset" />
+                <Button id="controls" onAction="#resetGame" text="Reset" />
             </HBox>
 
             <Label fx:id="statusLabel" />

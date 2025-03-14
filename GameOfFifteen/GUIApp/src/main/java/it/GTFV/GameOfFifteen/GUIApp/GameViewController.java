@@ -23,8 +23,11 @@
 package it.GTFV.GameOfFifteen.GUIApp;
 
 import it.GTFV.GameOfFifteen.Game.GameBoard;
+import it.GTFV.GameOfFifteen.Models.Tile;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -73,8 +76,77 @@ public class GameViewController {
     private void resetGame() {
         int shuffleMoves = Integer.parseInt(shuffleMovesField.getText());
         grid = new GameBoard(shuffleMoves);
-        //updateBoard();
+        updateBoard();
         statusLabel.setText("");
+    }
+
+    /**
+     * This method is used to update the boardGrid
+     *
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private void updateBoard(){
+        boardGrid.getChildren().clear(); // Clear the boardGrid
+        Tile[][] tiles = grid.getBoard();
+
+        for (int row = 0; row < grid.getGridSize(); row++) {
+            for (int col = 0; col < grid.getGridSize(); col++) {
+                Button tile = buildTile(tiles[row][col]);
+                boardGrid.add(tile,col,row);
+            }
+        }
+    }
+
+    /**
+     * This method return a button that represent a tile
+     *
+     * @param t the tile
+     * @return a button representing the tile
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private Button buildTile(Tile t){
+        double tileSize = Math.min(boardGrid.getPrefWidth() / grid.getGridSize(), boardGrid.getPrefHeight() / grid.getGridSize());
+
+        Button tileButton = new Button(t.getValue() == 0 ? "" : String.valueOf(t.getValue()));
+
+        tileButton.setMinSize(tileSize, tileSize);
+        tileButton.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+
+        if (t.getValue() == 0) {
+            tileButton.getStyleClass().add("empty-tile");
+            tileButton.setOnAction(this::handleEmptyTileButtonClick);
+        } else {
+            tileButton.getStyleClass().add("tile");
+            tileButton.setOnAction(this::handleTileButtonClick);
+        }
+
+
+        return tileButton;
+    }
+
+    /**
+     * This method is executed when a tile containing a number
+     *
+     * that is not zero is clicked
+     * @param actionEvent
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private void handleEmptyTileButtonClick(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     * This method is executed when the empty tile is clicked
+     *
+     * @param actionEvent
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private void handleTileButtonClick(ActionEvent actionEvent) {
+
     }
 }
 
