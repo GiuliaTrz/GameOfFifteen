@@ -33,6 +33,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -147,6 +148,19 @@ public class GameViewController {
             if (direction != null && grid.move(direction)){
                 updateBoard();
             }
+        }
+        isSolved();
+    }
+
+    /**
+     * This method verifies when the puzzle is solved
+     * @author Giulia Trozzi
+     * @author Francesco Valentini
+     */
+    private void isSolved () {
+        if (grid.isSolved()){
+            statusLabel.setText("Puzzle Solved!");
+            statusLabel.setTextFill(Color.GREEN);
         }
     }
 }
