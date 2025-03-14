@@ -35,7 +35,7 @@
         prefWidth="500"
         xmlns="http://javafx.com/javafx/17.0.12"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="it.GTFV.GameOfFifteen.GUIApp.GameViewContorller">
+        fx:controller="it.GTFV.GameOfFifteen.GUIApp.GameViewController">
 
     <!--
         This is the game grid where all the tiles are shown
