@@ -1,3 +1,52 @@
 .root {
-    -fx-background-color: red;
+    -fx-font-size: 16px;
+    -fx-background-color: #FEF9FF;
+}
+
+/*
+    Class for the Game Grid
+*/
+.GameGrid {
+    -fx-alignment: center;
+}
+
+/*
+    Class for a tile
+*/
+.tile {
+    -fx-background-color: #D4C1EC;
+    -fx-font-size: 30px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-background-radius: 15px;
+}
+
+.tile:hover {
+  -fx-background-color:#FCEBFF;
+}
+
+/*
+    Empty tile class
+*/
+.empty-tile {
+    -fx-background-color: #C9B1E7;
+    -fx-border-radius: 15px;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+    -fx-background-radius: 15px;
+}
+
+/*
+    Class for the game commands
+*/
+.game-commands {
+    -fx-background-color: #FCEBFF;
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+     -fx-font-size: 15px;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 180px;
+    -fx-prompt-text-fill: gray;
+
 }
