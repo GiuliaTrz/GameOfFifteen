@@ -29,12 +29,23 @@ import it.GTFV.GameOfFifteen.Models.Tile;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 /**
  *
@@ -161,6 +172,44 @@ public class GameViewController {
         if (grid.isSolved()){
             statusLabel.setText("Puzzle Solved!");
             statusLabel.setTextFill(Color.GREEN);
+            showVictoryPopup();
+        }
+    }
+
+    /**
+     * This method opens the victory pop up
+     *  @author Giulia Trozzi
+     *  @author Francesco Valentini
+     */
+    private void showVictoryPopup() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("VictoryPopUp.fxml"));
+            Parent root = loader.load();
+
+            Stage popupStage = new Stage();
+            popupStage.initModality(Modality.APPLICATION_MODAL);
+            popupStage.initStyle(StageStyle.UNDECORATED); // Removes the window borders
+
+            popupStage.initStyle(StageStyle.TRANSPARENT);
+            popupStage.setResizable(false);
+            popupStage.setTitle("Congratulations! :)");
+
+            // Obtains the controller and sets the stage
+            VictoryPopUp controller = loader.getController();
+            controller.setStage(popupStage);
+
+            Scene popupScene = new Scene(root, 300, 150);
+            popupScene.setFill(Color.TRANSPARENT);
+            popupStage.setScene(popupScene);
+
+            // Positions the popup at the center of the window
+            Stage primaryStage = (Stage) boardGrid.getScene().getWindow();
+            popupStage.setX(primaryStage.getX() + (primaryStage.getWidth() - 300) / 2);
+            popupStage.setY(primaryStage.getY() + (primaryStage.getHeight() - 150) / 2);
+
+            popupStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

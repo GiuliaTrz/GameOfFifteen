@@ -1,6 +1,7 @@
 .root {
     -fx-font-size: 16px;
     -fx-background-color: #FEF9FF;
+    -fx-background-radius: 30px;
 }
 
 /*
@@ -52,4 +53,33 @@
 .titleText {
         -fx-font-size: 45px;
         -fx-font-family: 'Brush Script MT';
+}
+
+
+/*
+This is the class for the victory popup style
+*/
+.victory-popup {
+    -fx-background-color: #FEF9FF;
+    -fx-border-width: 3px;
+    -fx-border-radius: 30px;
+    -fx-padding: 20px;
+    -fx-background-radius: 20px;
+}
+
+/*
+This styles the hover effect
+*/
+#closeButton:hover {
+    -fx-background-color: #B3D89C;
+}
+
+/*
+This styles the victory message label
+*/
+#messageLabel {
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Brush Script MT';
 }
