@@ -59,6 +59,7 @@ public class GameViewController {
     @FXML private GridPane boardGrid; //the board that contains the tiles
     @FXML private TextField shuffleMovesField;//the text field where you put the number of moves for the shuffle
     @FXML private Label statusLabel;//it shows you when you win
+    @FXML private Button btnResetGame;
 
     /**
      * This method initializes the window and sets its dimensions
@@ -91,7 +92,7 @@ public class GameViewController {
         int shuffleMoves = Integer.parseInt(shuffleMovesField.getText());
         grid = new GameBoard(shuffleMoves);
         updateBoard();
-        statusLabel.setText("");
+        btnResetGame.setText("Reset");
     }
 
     /**
@@ -170,8 +171,6 @@ public class GameViewController {
      */
     private void isSolved () {
         if (grid.isSolved()){
-            statusLabel.setText("Puzzle Solved!");
-            statusLabel.setTextFill(Color.GREEN);
             showVictoryPopup();
         }
     }
