@@ -83,3 +83,12 @@ This styles the victory message label
     -fx-font-weight: bold;
     -fx-font-family: 'Brush Script MT';
 }
+
+/*
+This is the class for the label containing the authors
+*/
+.authors {
+    -fx-font-size: 25px;
+    -fx-font: italic 14px "Verdana";
+    -fx-padding: 4px;
+}

@@ -49,11 +49,11 @@
         <VBox alignment="CENTER" spacing="10">
 
             <HBox alignment="CENTER" spacing="10">
-                <TextField id="txtbShuffleMoves" fx:id="shuffleMovesField" alignment="CENTER" promptText="Enter shuffle moves" styleClass="game-commands" />
-                <Button id="btnResetGame" onAction="#resetGame" styleClass="game-commands" text="Reset" />
+                <TextField id="txtbShuffleMoves" fx:id="shuffleMovesField" alignment="CENTER" promptText="Enter shuffle level" styleClass="game-commands" />
+                <Button id="btnResetGame" fx:id="btnResetGame" onAction="#resetGame" styleClass="game-commands" text="Start" />
             </HBox>
 
-            <Label fx:id="statusLabel" />
+            <Label styleClass="authors" text="Giulia Trozzi &amp; Francesco Valentini"/>
         </VBox>
     </bottom>
 
