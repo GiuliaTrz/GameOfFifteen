@@ -17,9 +17,8 @@
     -fx-background-color: #D4C1EC;
     -fx-font-size: 30px;
     -fx-border-radius: 15px;
-    -fx-border-width: 1px;
-    -fx-border-color: black;
     -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
 .tile:hover {
@@ -30,10 +29,8 @@
     Empty tile class
 */
 .empty-tile {
-    -fx-background-color: #C9B1E7;
+    -fx-background-color: #FEF9FF;
     -fx-border-radius: 15px;
-    -fx-border-width: 1px;
-    -fx-border-color: black;
     -fx-background-radius: 15px;
 }
 
@@ -42,11 +39,17 @@
 */
 .game-commands {
     -fx-background-color: #FCEBFF;
-    -fx-border-width: 1px;
-    -fx-border-color: black;
-     -fx-font-size: 15px;
+    -fx-font-size: 15px;
     -fx-pref-height: 30px;
     -fx-pref-width: 180px;
     -fx-prompt-text-fill: gray;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 5, 0, 0, 0);
+}
 
+/*
+    Class for the top title label
+*/
+.titleText {
+        -fx-font-size: 45px;
+        -fx-font-family: 'Brush Script MT';
 }
