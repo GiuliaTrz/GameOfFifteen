@@ -30,8 +30,12 @@
 
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@style.css"
+            alignment="CENTER"
+            spacing="20"
+            styleClass="victory-popup"
             fx:controller="it.GTFV.GameOfFifteen.GUIApp.VictoryPopUp"
             prefHeight="400.0" prefWidth="600.0">
-            <Label fx:id="messageLabel" text="Hai risolto il puzzle!" />
-            <Button fx:id="closeButton" onAction="#handleClose" text="OK" />
+            <Label fx:id="messageLabel"  text="You solved the puzzle! :)" />
+            <Button fx:id="closeButton" styleClass="game-commands" onAction="#handleClose" text="OK" />
 </VBox>
