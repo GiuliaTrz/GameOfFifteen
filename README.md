@@ -9,6 +9,10 @@ The **Game Of Fifteen** is a classic numerical puzzle consisting of a 4x4 grid c
 2. **Allowed Moves**: You can move a tile adjacent to the empty square (up, down, left, or right) into the empty position.
 3. **Winning**: Rearrange the tiles in ascending order, with the empty square in the bottom-right corner.
 
+## Screenshots
+![mainScreen](https://github.com/user-attachments/assets/f901fcd8-cdf0-4619-b857-44b2106fb400)
+![mainScreen-Victory](https://github.com/user-attachments/assets/75432907-b4d6-4d5b-8e67-aa66300cb960)
+
 ## How to play
 1) Download the latest version from the [Releases](https://github.com/GiuliaTrz/GameOfFifteen/releases) and unzip it
 2) Run the batch file (`GUIApp.bat` on Windows) or the bash file (`GUIApp` on Unix Systems) in the `bin/` folder
@@ -36,3 +40,4 @@ git clone https://github.com/GiuliaTrz/GameOfFifteen.git && cd GameOfFifteen/Gam
 - Java 21
 - JavaFX
 - Gradle
+
