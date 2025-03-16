@@ -11,7 +11,6 @@ The **Game Of Fifteen** is a classic numerical puzzle consisting of a 4x4 grid c
 
 ## Screenshots
 ![mainScreen](https://github.com/user-attachments/assets/f901fcd8-cdf0-4619-b857-44b2106fb400)
-![mainScreen-Victory](https://github.com/user-attachments/assets/75432907-b4d6-4d5b-8e67-aa66300cb960)
 
 ## How to play
 1) Download the latest version from the [Releases](https://github.com/GiuliaTrz/GameOfFifteen/releases) and unzip it
