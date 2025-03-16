@@ -2,16 +2,31 @@
 
 The **Game Of Fifteen** is a classic numerical puzzle consisting of a 4x4 grid containing 15 numbered tiles from 1 to 15 and one empty square. The goal of the game is to arrange the tiles in ascending order by moving adjacent tiles into the empty space. The game is also known as the **15 Puzzle**.
 
-### Game Rules
+## Game Rules
 
 1. **Initial Setup**: The tiles are randomly arranged in the 4x4 grid, with one empty square.
    - By varying the number of moves made by the shuffle, it is possible to increase or decrease the complexity of the puzzle.
 2. **Allowed Moves**: You can move a tile adjacent to the empty square (up, down, left, or right) into the empty position.
 3. **Winning**: Rearrange the tiles in ascending order, with the empty square in the bottom-right corner.
 
-### Compile and Run the Project
-- **GUI App:** `./gradlew :GUIApp:run`
-- **CLI App:** `./gradlew :app:run`
+## How to play
+1) Download the latest version from the [Releases](https://github.com/GiuliaTrz/GameOfFifteen/releases) and unzip it
+2) Run the batch file (`GUIApp.bat` on Windows) or the bash file (`GUIApp` on Unix Systems) in the `bin/` folder
+
+## Compile from sources
+#### 1) Clone the repository and navigate to the project directory
+```bash
+git clone https://github.com/GiuliaTrz/GameOfFifteen.git && cd GameOfFifteen/GameOfFifteen
+```
+
+#### 2) Build and run the project
+```bash
+# Run the GUI version
+./gradlew :GUIApp:run
+
+# Run the CLI version
+./gradlew :app:run
+```
 
 ## Developers
 - [Giulia Trozzi](https://github.com/GiuliaTrz)
